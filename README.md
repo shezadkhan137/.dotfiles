@@ -29,7 +29,7 @@ Install
 2. `git clone https://github.com/letolab/.dotfiles.git` (lies fork this mofo don't clone)
 3. `cd .dotfiles`
 4. `python makesyms.py`
-5. `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim` trust me you want this
+5. `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle` trust me you want this
 
 Programs
 ---------------

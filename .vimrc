@@ -19,16 +19,18 @@ filetype off "don't delete from here...
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " below are some plugins to make your life easier. uncomment and :BundleInstall
 " when you feel brave enough. they are all pretty frickin usefull.
 
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'jpo/vim-railscasts-theme'
 "Plugin 'airblade/vim-gitgutter'
-"Plugin 'itchyny/lightline.vim'
+Plugin 'itchyny/lightline.vim'
 "Plugin 'jpythonfold.vim'
 "Plugin 'kien/ctrlp.vim'
-"Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 filetype plugin indent on " ....to here.
 
@@ -51,7 +53,7 @@ endif
 syntax enable
 set t_Co=256
 set background=dark
-"colorscheme <hybrid|solarized|etc> set this to your prefered color scheme
+colorscheme railscasts 
 
 "sanity settings
 set backspace=indent,eol,start "makes backspacing non retarded
