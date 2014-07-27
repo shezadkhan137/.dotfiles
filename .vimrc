@@ -23,16 +23,23 @@ Plugin 'gmarik/Vundle.vim'
 
 " below are some plugins to make your life easier. uncomment and :BundleInstall
 " when you feel brave enough. they are all pretty frickin usefull.
-
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'jpo/vim-railscasts-theme'
-"Plugin 'airblade/vim-gitgutter'
+" Plugin 'tomasr/molokai'
+Plugin 'sickill/vim-monokai'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
-"Plugin 'jpythonfold.vim'
-"Plugin 'kien/ctrlp.vim'
+Plugin 'jpythonfold.vim'
+Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'hdima/python-syntax'
+Plugin 'rking/ag.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 
 filetype plugin indent on " ....to here.
+filetype plugin on
 
 " Get running OS
 let os = ""
@@ -53,7 +60,11 @@ endif
 syntax enable
 set t_Co=256
 set background=dark
-colorscheme railscasts 
+colorscheme monokai 
+let g:molokai_original = 1
+let g:rehash256 = 1
+
+let NERDTreeQuitOnOpen = 0
 
 "sanity settings
 set backspace=indent,eol,start "makes backspacing non retarded
@@ -94,6 +105,12 @@ map <ScrollWheelDown> 3<C-E>
 " Pawel says this is important
 noremap Q <nop>
 
+"move around windows
+"nnoremap <C-h> <C-w>h
+"nnoremap <C-j> <C-w>j
+"nnoremap <C-k> <C-w>k
+"nnoremap <C-l> <C-w>l
+
 "status line
 set laststatus=2
 
@@ -123,3 +140,37 @@ if os == 'unix'
     set clipboard=unnamedplus
 endif
 
+map <C-n> :NERDTreeToggle<CR>
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" mapder to space
+let mapleader = "\<Space>"
+
+autocmd FileType python source ~/.vim/bundle/jpythonfold.vim/syntax/jpythonfold.vim
+
+highlight Pmenu ctermfg=231 ctermbg=72  guibg=#407197
+
+" Remap arrows to learn"
+nnoremap   <Up>     :call system('say penis')<CR>
+nnoremap   <Down>   :call system('say cock')<CR>
+nnoremap   <Left>   :call system('say dong')<CR>
+nnoremap   <Right>  :call system('say Johnson')<CR>
+inoremap  <Up>     :call system('say Never Going To')<CR>
+inoremap  <Down>   :call system('say Give You Up')<CR>
+inoremap  <Left>   :call system('say Never going to')<CR>
+inoremap  <Right>  :call system('say Let You down')<CR>
+
+let NERDTreeIgnore = ['\.pyc$']
+
+" folding and things
+nnoremap <leader><leader> za
+nnoremap <leader>r zr
+nnoremap <leader>m zm
+
+" write files
+nnoremap <Leader>w :w<CR>
+
+" buffer swap
+nnoremap <leader><Tab> <C-^>
