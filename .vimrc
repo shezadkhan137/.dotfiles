@@ -32,11 +32,13 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'hdima/python-syntax'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'fatih/vim-go'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'chase/vim-ansible-yaml'
 
 filetype plugin indent on " ....to here.
 filetype plugin on
@@ -104,12 +106,6 @@ map <ScrollWheelDown> 3<C-E>
 
 " Pawel says this is important
 noremap Q <nop>
-
-"move around windows
-"nnoremap <C-h> <C-w>h
-"nnoremap <C-j> <C-w>j
-"nnoremap <C-k> <C-w>k
-"nnoremap <C-l> <C-w>l
 
 "status line
 set laststatus=2
