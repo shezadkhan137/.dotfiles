@@ -1,5 +1,3 @@
-" welcome to your vimrc, there are many like it, but this one is yours.
-" the idea here is we give you a basic vimrc that makes vim behave in a
 " vaguely rational way, without forcing anyone into a specific useage pattern.
 " half the fun is working out what works for you and what doesn't!
 " however alot of the stuff in this base file is highly unlikely to change
@@ -39,6 +37,9 @@ Plugin 'tpope/vim-repeat'
 Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'Kazark/vim-SimpleSmoothScroll'
+Plugin 'scrooloose/syntastic'
+Plugin 'duff/vim-scratch'
 
 filetype plugin indent on " ....to here.
 filetype plugin on
@@ -136,8 +137,11 @@ if os == 'unix'
     set clipboard=unnamedplus
 endif
 
+"nerd tree stuff
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']
 
+" ctrl p
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
@@ -146,6 +150,7 @@ let mapleader = "\<Space>"
 
 autocmd FileType python source ~/.vim/bundle/jpythonfold.vim/syntax/jpythonfold.vim
 
+" match tmux
 highlight Pmenu ctermfg=231 ctermbg=72  guibg=#407197
 
 " Remap arrows to learn"
@@ -158,15 +163,21 @@ inoremap  <Down>   :call system('say Give You Up')<CR>
 inoremap  <Left>   :call system('say Never going to')<CR>
 inoremap  <Right>  :call system('say Let You down')<CR>
 
-let NERDTreeIgnore = ['\.pyc$']
 
 " folding and things
 nnoremap <leader><leader> za
 nnoremap <leader>r zr
 nnoremap <leader>m zm
+nnoremap <leader>k zk
+nnoremap <leader>j zj
 
 " write files
 nnoremap <Leader>w :w<CR>
 
 " buffer swap
 nnoremap <leader><Tab> <C-^>
+
+let python_highlight_all = 1
+
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args='--ignore=E501,E225,E226,E265,E401,E122'
