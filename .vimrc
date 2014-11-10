@@ -40,6 +40,7 @@ Plugin 'chase/vim-ansible-yaml'
 Plugin 'Kazark/vim-SimpleSmoothScroll'
 Plugin 'scrooloose/syntastic'
 Plugin 'duff/vim-scratch'
+Plugin 'Raimondi/delimitMate'
 
 filetype plugin indent on " ....to here.
 filetype plugin on
@@ -187,3 +188,5 @@ let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+autocmd FileType python abbreviate print logger.debug(" %r"
