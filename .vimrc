@@ -14,7 +14,7 @@ set nocompatible " so Vi (the precursor to Vim) is pretty bad, we don't want tha
 
 filetype off "don't delete from here...
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 Plugin 'gmarik/Vundle.vim'
@@ -43,6 +43,7 @@ Plugin 'duff/vim-scratch'
 Plugin 'Raimondi/delimitMate'
 Plugin 'mazubieta/gitlink-vim'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'alfredodeza/pytest.vim'
 
 filetype plugin indent on " ....to here.
 filetype plugin on
@@ -191,11 +192,18 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
-autocmd FileType python abbreviate print logger.debug(" %r"
+"autocmd FileType python abbreviate print logger.debug(" %r"
+"autocmd BufLeave python unabbreviate print
 
 "git link
 nmap <leader>gl :echo gitlink#GitLink()<CR>
-command GitLink :echo gitlink#GitLink()
+"command GitLink :echo gitlink#GitLink()
 
 "easymotion
 map <Leader> <Plug>(easymotion-prefix)
+
+" Pytest
+nmap <silent><Leader>tf <Esc>:Pytest file delgado<CR>
+nmap <silent><Leader>tm <Esc>:Pytest function delgado<CR>
+
+let g:go_fmt_command = "goimports"
