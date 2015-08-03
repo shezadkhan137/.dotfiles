@@ -44,6 +44,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'mazubieta/gitlink-vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'alfredodeza/pytest.vim'
+Plugin 'dyng/ctrlsf.vim'
 
 filetype plugin indent on " ....to here.
 filetype plugin on
@@ -67,7 +68,7 @@ endif
 syntax enable
 set t_Co=256
 set background=dark
-colorscheme monokai 
+colorscheme Tomorrow-Night-Eighties
 let g:molokai_original = 1
 let g:rehash256 = 1
 
@@ -207,3 +208,5 @@ nmap <silent><Leader>tf <Esc>:Pytest file delgado<CR>
 nmap <silent><Leader>tm <Esc>:Pytest function delgado<CR>
 
 let g:go_fmt_command = "goimports"
+
+vmap <Leader>F <Plug>CtrlSFVwordExec
