@@ -209,4 +209,5 @@ nmap <silent><Leader>tm <Esc>:Pytest function delgado<CR>
 
 let g:go_fmt_command = "goimports"
 
+map <Leader>s <Plug>(easymotion-s)
 vmap <Leader>F <Plug>CtrlSFVwordExec
