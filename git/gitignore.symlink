@@ -1,0 +1,12 @@
+*.pyc
+*.egg-info
+*.egg
+__pycache__
+.coverage
+.tox
+venv
+*.swo
+*.swp
+*.swn
+*~
+*.DS_Store

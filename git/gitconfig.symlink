@@ -1,0 +1,55 @@
+[user]
+        name = Shezad Khan
+        email = shezad@letolab.com
+
+[push]
+        default = simple
+
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+
+[alias]
+    co = checkout
+    cm = commit -m
+    um = reset --merge ORIG_HEAD
+    ur = reset --hard ORIG_HEAD
+    ap = add -p
+    up = pull --rebase --prune
+    cob = checkout -b
+    
+    # checkout fix-$1 branch
+    fixb = "!f() { git checkout -b fix-$1; }; f"
+
+    # checkout feat-$1 branch
+    featb = "!f() { git checkout -b feat-$1; }; f"
+
+    wip = !git add -u && git commit -m "WIP"
+    amend = commit --amend
+    ec = config --global -e
+
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --first-parent
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+
+    dev = checkout develop
+    mas = checkout master
+
+     # Delete all branches that have been merged into master or given branch
+    # Could do with passing --no-run-if-empty to xargs here, but that's only a
+    # valid flag for GNU xargs.
+    md-bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
+
+    # Checkout branch, bring it up to date with origin and delete all merged branches
+    md-bdone = "!f() { git checkout ${1-master} && git md-up && git md-bclean ${1-master}; }; f"
+
+     # Open merge conflicts in vim tabs
+    md-fix = "!f() { vim +/'<<<<<<<' -c 'redraw' -p `git diff --name-only --diff-filter=U`; }; f"
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
+
+[help]
+    autocorrect = 1

@@ -45,7 +45,6 @@ Plugin 'mazubieta/gitlink-vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'alfredodeza/pytest.vim'
 Plugin 'dyng/ctrlsf.vim'
-Plugin 'tpope/vim-speeddating'
 
 filetype plugin indent on " ....to here.
 filetype plugin on
@@ -212,4 +211,3 @@ let g:go_fmt_command = "goimports"
 
 map <Leader>s <Plug>(easymotion-s)
 vmap <Leader>F <Plug>CtrlSFVwordExec
-noremap <c-b> <c-a>
