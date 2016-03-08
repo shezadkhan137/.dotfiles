@@ -9,8 +9,10 @@ unbind C-b
 set -g prefix C-a
 bind a send-prefix
 
-setw -g mode-mouse on #enables mouse
-set -g mouse-select-pane on #more mouse
+set -g mouse on #mouse on
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
+bind -n WheelDownPane select-pane -t= \; send-keys -M
+bind -n C-WheelUpPane select-pane -t= \; copy-mode -e \; send-keys -M
 set -g status-keys vi #vim mode
 setw -g mode-keys vi #vim mode
 set -g default-terminal "screen-256color" #all the colors
@@ -58,6 +60,6 @@ bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iqE 
 
 set-option -g status-position top
 
-source-file ~/tmux_snapshot.conf
+#source-file ~/tmux_snapshot.conf
 
 bind a send-prefix

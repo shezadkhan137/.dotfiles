@@ -1,10 +1,8 @@
 [user]
-        name = Shezad Khan
-        email = shezad@letolab.com
-
+    name = Shezad Khan
+    email = shaz@revl.world
 [push]
-        default = simple
-
+    default = simple
 [core]
     editor = vim
     excludesfile = ~/.gitignore
@@ -12,6 +10,7 @@
 [alias]
     co = checkout
     cm = commit -m
+    uc = reset --soft HEAD~1
     um = reset --merge ORIG_HEAD
     ur = reset --hard ORIG_HEAD
     ap = add -p
@@ -25,7 +24,6 @@
     featb = "!f() { git checkout -b feat-$1; }; f"
 
     wip = !git add -u && git commit -m "WIP"
-    amend = commit --amend
     ec = config --global -e
 
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --first-parent

@@ -14,7 +14,7 @@ set nocompatible " so Vi (the precursor to Vim) is pretty bad, we don't want tha
 
 filetype off "don't delete from here...
 
-set rtp+=~/.vim/bundle/Vundle.vim/
+set rtp+=~/.vim/Vundle.vim/
 call vundle#rc()
 
 Plugin 'gmarik/Vundle.vim'
@@ -45,6 +45,7 @@ Plugin 'mazubieta/gitlink-vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'alfredodeza/pytest.vim'
 Plugin 'dyng/ctrlsf.vim'
+Plugin 'tpope/vim-fugitive'
 
 filetype plugin indent on " ....to here.
 filetype plugin on
@@ -211,3 +212,4 @@ let g:go_fmt_command = "goimports"
 
 map <Leader>s <Plug>(easymotion-s)
 vmap <Leader>F <Plug>CtrlSFVwordExec
+map <leader>y :call yapf#YAPF()<cr>
