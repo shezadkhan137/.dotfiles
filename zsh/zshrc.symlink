@@ -58,3 +58,23 @@ prompt pure
 export EDITOR=vim
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+TERM="screen-256color"
+
+export TERM
+export VIMRUNTIME=/usr/share/vim/vim80
+
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+alias cpyc='find . -name "*.pyc" -exec rm -rf {} \;'
+alias ipy="python -c 'import IPython; IPython.terminal.ipapp.launch_new_instance()'"
+
+. /anaconda2/etc/profile.d/conda.sh
+
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
+export WORKON_HOME=~/.ve
+export PROJECT_HOME=~/Development
+
+eval "$(pyenv init -)"
+pyenv virtualenvwrapper_lazy

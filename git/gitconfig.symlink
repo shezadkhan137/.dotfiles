@@ -1,11 +1,12 @@
 [user]
     name = Shezad Khan
-    email = shaz@revl.world
+	email = shezadkhan137@gmail.com
 [push]
     default = simple
 [core]
     editor = vim
     excludesfile = ~/.gitignore
+	autocrlf = false
 
 [alias]
     co = checkout
@@ -41,7 +42,16 @@
     md-bdone = "!f() { git checkout ${1-master} && git md-up && git md-bclean ${1-master}; }; f"
 
      # Open merge conflicts in vim tabs
-    md-fix = "!f() { vim +/'<<<<<<<' -c 'redraw' -p `git diff --name-only --diff-filter=U`; }; f"
+    fix = "!f() { vim +/'<<<<<<<' -c 'redraw' -p `git diff --name-only --diff-filter=U`; }; f"
+
+    sshow = "!f() { git stash show stash^{/$*} -p; }; f"
+    sapply = "!f() { git stash apply stash^{/$*}; }; f"
+
+    unstage = reset HEAD --
+
+    pnv = push --no-verify
+
+    amend = commit --amend
 
 [color]
     diff = auto
@@ -51,3 +61,7 @@
 
 [help]
     autocorrect = 1
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
